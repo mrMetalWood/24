@@ -165,13 +165,16 @@
           '#992114',
           '#1A3112',
           '#C5A436',
-          '#470808'
+          '#470808',
+          '#378b29',
+          '#74d680',
+          '#ff7878'
         ]
 
         day.style.order =
           String(Math.floor(Math.random() * 100));
         day.style.backgroundColor =
-          colors[Math.floor(Math.random() * (8 - 0 + 1))];
+          colors[Math.floor(Math.random() * (11 - 0 + 1))];
 
         if (visited && visited.includes(i + 1)) {
           day.style.backgroundImage =
