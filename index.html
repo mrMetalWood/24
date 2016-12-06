@@ -108,20 +108,20 @@
       <div class="day" data-video="JNS_SUmCJm4">8</div>
       <div class="day" data-video="KYa28vTSAM4">9</div>
       <div class="day" data-video="b5aQ2dLzzXs">10</div>
-      <div class="day" data-video="">11</div>
-      <div class="day" data-video="">12</div>
-      <div class="day" data-video="">13</div>
-      <div class="day" data-video="">14</div>
-      <div class="day" data-video="">15</div>
-      <div class="day" data-video="">16</div>
-      <div class="day" data-video="">17</div>
-      <div class="day" data-video="">18</div>
-      <div class="day" data-video="">19</div>
-      <div class="day" data-video="">20</div>
-      <div class="day" data-video="">21</div>
-      <div class="day" data-video="">22</div>
-      <div class="day" data-video="">23</div>
-      <div class="day" data-video="">24</div>
+      <div class="day" data-video="ALvep1RsGQ0">11</div>
+      <div class="day" data-video="oxDyOkYAoHs">12</div>
+      <div class="day" data-video="GP7Kx-TQ8BU">13</div>
+      <div class="day" data-video="ZjrbRjGw7nQ">14</div>
+      <div class="day" data-video="yMmusqCg2jg">15</div>
+      <div class="day" data-video="wVgTIkm0ZlA">16</div>
+      <div class="day" data-video="DC-nOFxScKs">17</div>
+      <div class="day" data-video="6rphb3YVfU8">18</div>
+      <div class="day" data-video="WsvNKguImtQ">19</div>
+      <div class="day" data-video="58qg-a8pCsI">20</div>
+      <div class="day" data-video="-ey9wYTOgew">21</div>
+      <div class="day" data-video="uHqQmSrYzqE">22</div>
+      <div class="day" data-video="1GkeuBsvxvI">23</div>
+      <div class="day" data-video="P2emuZQGW-8">24</div>
 
       <div class="lightbox">
         <div class="lightbox-overlay"></div>
@@ -185,11 +185,13 @@
       }
 
       function handleClick(event) {
-        const now = new Date();
+        const now = Date.parse(new Date());
         const day = event.target;
         const dayNumber = Number(day.textContent);
+        const dayMs =
+          Date.parse(`2016-12-${(`0${dayNumber}`).slice(-2)}T00:00:00Z`);
 
-        if (dayNumber <= now.getDate()) {
+        if (now - dayMs >= 0) {
           createVideoIframe(day.dataset.video);
 
           if(!localStorage.getItem('24')) {
