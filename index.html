@@ -1,218 +1,309 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>24</title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <title>24</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <style media="screen">
-      html, body {
-        padding: 0;
-        margin: 0;
-      }
-      .container {
-        width: 100vw;
-        height: 100vh;
-        background: blue;
-        display: flex;
-        flex-wrap: wrap;
-      }
+  <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
 
-      .lightbox {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        display: none;
-      }
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
 
-      .lightbox--open {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+  <style media="screen">
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+    }
 
-      .lightbox-overlay {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.5);
-      }
-      .lightbox-close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        transform: rotate(45deg);
-        z-index: 2;
-        color: #fff;
-        font-size: 40px;
-      }
+    .container {
+      width: 100vw;
+      height: 100vh;
+      background: blue;
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-      .lightbox-close:hover {
-        cursor: pointer;
-      }
-      .lightbox-content {
-        width: 90%;
-        height: 90%;
-        height: 0;
-        padding-bottom: 56.25%;
-        position: relative;
-        z-index: 1;
-      }
+    .lightbox {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: none;
+      z-index: 2;
+    }
 
-      iframe {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-      }
-      .day {
-        flex: 1 0 25%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        color: #fff;
-        font-family: 'Mountains of Christmas', cursive;
-        font-size: 34px;
-      }
+    .lightbox--open {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      .day:hover {
-        cursor: pointer;
-      }
+    .lightbox-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.75);
+    }
 
-    </style>
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      transform: rotate(45deg);
+      z-index: 2;
+      color: #fff;
+      font-size: 40px;
+    }
 
-  </head>
-  <body>
-    <div class="container">
-      <div class="day" data-video="OftJ7_6FiDA">1</div>
-      <div class="day" data-video="tIdIqbv7SPo">2</div>
-      <div class="day" data-video="HbqQL0J_Vr0">3</div>
-      <div class="day" data-video="plmnpVBszj4">4</div>
-      <div class="day" data-video="gZXjFV8nT4E">5</div>
-      <div class="day" data-video="k8SKjL5dIb0">6</div>
-      <div class="day" data-video="PMHfYLZS4cI">7</div>
-      <div class="day" data-video="JNS_SUmCJm4">8</div>
-      <div class="day" data-video="KYa28vTSAM4">9</div>
-      <div class="day" data-video="b5aQ2dLzzXs">10</div>
-      <div class="day" data-video="ALvep1RsGQ0">11</div>
-      <div class="day" data-video="oxDyOkYAoHs">12</div>
-      <div class="day" data-video="GP7Kx-TQ8BU">13</div>
-      <div class="day" data-video="ZjrbRjGw7nQ">14</div>
-      <div class="day" data-video="yMmusqCg2jg">15</div>
-      <div class="day" data-video="wVgTIkm0ZlA">16</div>
-      <div class="day" data-video="DC-nOFxScKs">17</div>
-      <div class="day" data-video="6rphb3YVfU8">18</div>
-      <div class="day" data-video="WsvNKguImtQ">19</div>
-      <div class="day" data-video="58qg-a8pCsI">20</div>
-      <div class="day" data-video="-ey9wYTOgew">21</div>
-      <div class="day" data-video="uHqQmSrYzqE">22</div>
-      <div class="day" data-video="1GkeuBsvxvI">23</div>
-      <div class="day" data-video="P2emuZQGW-8">24</div>
+    .lightbox-close:hover {
+      cursor: pointer;
+    }
 
-      <div class="lightbox">
-        <div class="lightbox-overlay"></div>
-        <div class="lightbox-close">&#43;</div>
-        <div class="lightbox-content"></div>
-      </div>
+    .lightbox-content {
+      width: 90%;
+      height: 90%;
+      /* height: 0; */
+      /* padding-bottom: 56.25%; */
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      position: absolute;
+    }
+
+    .day {
+      flex: 1 0 25%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      font-family: 'Mountains of Christmas', cursive;
+      font-size: 34px;
+      position: relative
+    }
+
+    .day span {
+      z-index: 1;
+    }
+
+    .day[style*="background-image"]:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .day:hover {
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>1</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/Pff3LgCldTkMo/giphy.webp">
+      <span>2</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/12mWfQYoxRqslq/giphy.webp">
+      <span>3</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/oMV9WErqn3ZG8/giphy.webp">
+      <span>4</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/PnoAKkx6t0zSg/giphy.webp">
+      <span>5</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>6</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>7</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>8</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>9</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>10</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>11</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>12</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>13</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>14</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>15</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>16</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>17</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>18</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>19</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>20</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>21</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>22</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/amCh2vTHXpQyI/giphy.webp">
+      <span>23</span>
+    </div>
+    <div class="day" data-video="https://i.giphy.com/media/yKYljYaJsa9TW/giphy.webp">
+      <span>24</span>
     </div>
 
+    <div class="lightbox">
+      <div class="lightbox-overlay"></div>
+      <div class="lightbox-close">&#43;</div>
+      <div class="lightbox-content"></div>
+    </div>
+  </div>
 
-    <script type="text/javascript">
-      const lightbox= document.querySelector('.lightbox');
-      const lightboxOverlay= document.querySelector('.lightbox-overlay');
-      const lightboxClose= document.querySelector('.lightbox-close');
-      const lightboxContent = document.querySelector('.lightbox-content');
 
-
-      lightboxOverlay.addEventListener('click', () => {
-        lightbox.classList.remove('lightbox--open');
-        lightboxContent.innerHTML = '';
+  <script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(function (registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }).catch(function (err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
       });
-      lightboxClose.addEventListener('click', () => {
-        lightbox.classList.remove('lightbox--open');
-        lightboxContent.innerHTML = '';
-      });
+    }
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxOverlay = document.querySelector('.lightbox-overlay');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxContent = document.querySelector('.lightbox-content');
 
-      const days = document.querySelectorAll('.day');
 
-      let visited = null;
-      if(localStorage.getItem('24')) {
-        visited = JSON.parse(localStorage.getItem("24"));
+    lightboxOverlay.addEventListener('click', () => {
+      lightbox.classList.remove('lightbox--open');
+      lightboxContent.innerHTML = '';
+    });
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.remove('lightbox--open');
+      lightboxContent.innerHTML = '';
+    });
+
+    const days = document.querySelectorAll('.day');
+
+    let visited = null;
+    if (localStorage.getItem('24')) {
+      visited = JSON.parse(localStorage.getItem("24"));
+    }
+
+    for (var i = 0; i < days.length; i++) {
+      const day = days[i];
+      const colors = [
+        '#F5624D',
+        '#CC231E',
+        '#34A65F',
+        '#0F8A5F',
+        '#235E6F',
+        '#992114',
+        '#1A3112',
+        '#C5A436',
+        '#470808',
+        '#378b29',
+        '#74d680',
+        '#ff7878'
+      ]
+
+      day.style.order =
+        String(Math.floor(Math.random() * 100));
+      day.style.backgroundColor =
+        colors[Math.floor(Math.random() * (11 - 0 + 1))];
+
+      if (visited && visited.includes(i + 1)) {
+        day.style.backgroundImage =
+          `url(${day.dataset.video})`
       }
 
-      for (var i = 0; i < days.length; i++) {
-        const day = days[i];
-        const colors = [
-          '#F5624D',
-          '#CC231E',
-          '#34A65F',
-          '#0F8A5F',
-          '#235E6F',
-          '#992114',
-          '#1A3112',
-          '#C5A436',
-          '#470808',
-          '#378b29',
-          '#74d680',
-          '#ff7878'
-        ]
+      day.addEventListener('click', handleClick);
+    }
 
-        day.style.order =
-          String(Math.floor(Math.random() * 100));
-        day.style.backgroundColor =
-          colors[Math.floor(Math.random() * (11 - 0 + 1))];
+    function handleClick(event) {
+      const now = Date.parse(new Date());
+      const day = event.target;
+      const dayNumber = Number(day.textContent);
+      const dayMs =
+        Date.parse(`2017-12-${(`0${dayNumber}`).slice(-2)}T00:00:00Z`);
 
-        if (visited && visited.includes(i + 1)) {
-          day.style.backgroundImage =
-            `url('http://img.youtube.com/vi/${day.dataset.video}/mqdefault.jpg')`
-        }
+      if (now - dayMs >= 0) {
+        createGif(day.dataset.video);
 
-        day.addEventListener('click', handleClick);
-      }
-
-      function handleClick(event) {
-        const now = Date.parse(new Date());
-        const day = event.target;
-        const dayNumber = Number(day.textContent);
-        const dayMs =
-          Date.parse(`2016-12-${(`0${dayNumber}`).slice(-2)}T00:00:00Z`);
-
-        if (now - dayMs >= 0) {
-          createVideoIframe(day.dataset.video);
-
-          if(!localStorage.getItem('24')) {
-            localStorage.setItem("24", JSON.stringify([dayNumber]));
-          } else {
-            const visited = JSON.parse(localStorage.getItem("24"));
-
-            if (!visited.includes(dayNumber)) {
-              visited.push(dayNumber);
-              localStorage.setItem("24", JSON.stringify(visited));
-            }
-          }
+        if (!localStorage.getItem('24')) {
+          localStorage.setItem("24", JSON.stringify([dayNumber]));
         } else {
-          createVideoIframe('i4kU4GsodWk', 125, 134);
-        }
-      }
+          const visited = JSON.parse(localStorage.getItem("24"));
 
-      function createVideoIframe(id, start, end) {
-        lightbox.classList.toggle('lightbox--open');
-        lightboxContent.innerHTML = `<iframe width="1000" height="315" src="https://www.youtube-nocookie.com/embed/${id}?start=${start || 0}&end=${end}&rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>`;
+          if (!visited.includes(dayNumber)) {
+            visited.push(dayNumber);
+            localStorage.setItem("24", JSON.stringify(visited));
+          }
+        }
+      } else {
+        createGif('https://i.giphy.com/media/l378h4fviW00hcm88/giphy.webp');
       }
-    </script>
-  </body>
+    }
+
+    function createGif(id) {
+      lightbox.classList.toggle('lightbox--open');
+      lightboxContent.innerHTML = `<img src="${id}">`;
+    }
+  </script>
+</body>
+
 </html>
